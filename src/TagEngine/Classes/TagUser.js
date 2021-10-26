@@ -1,4 +1,4 @@
-const User = require('./User');
+const User = require('./User')
 
 /**
  * @typedef {Object} TagUserData
@@ -9,13 +9,13 @@ const User = require('./User');
  * The User object used by the TagEngine.
  */
 class TagUser extends User {
-    constructor() {
-        super();
-    }
+  constructor () {
+    super()
+  }
 
-    static createUser(id, username) {
-        var user = super.createUser(id, username);
-    }
+  static createUser (id, username) {
+    const user = super.createUser(id, username)
+  }
 }
 
-module.exports = TagUser;
+module.exports = TagUser

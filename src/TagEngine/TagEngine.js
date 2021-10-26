@@ -1,7 +1,7 @@
-const Canvas = require('canvas');
-const fs = require('fs');
-const path = require('path');
-const { EventEmitter } = require('events');
+const Canvas = require('canvas')
+const fs = require('fs')
+const path = require('path')
+const { EventEmitter } = require('events')
 
 /**
  * @typedef {Object} TagEngineOptions
@@ -12,10 +12,9 @@ const { EventEmitter } = require('events');
  * The tag rendering engine.
  */
 class TagEngine extends EventEmitter {
-    constructor(options) {
-        super();
-        
-    }
+  constructor (options) {
+    super()
+  }
 }
 
-module.exports = TagEngine;
+module.exports = TagEngine

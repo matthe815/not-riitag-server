@@ -3,7 +3,7 @@ const JSONSerializable = require('./JSONSerializable');
 /**
  * Defines the property values of a User.
  * @typedef {Object} UserData
- * @property {string|number} id The id of the user.
+ * @property {string} id The id of the user.
  * @property {string} username The username of the user.
  * @property {number} userTimeCreated The time that the user was created.
  */
@@ -15,7 +15,7 @@ const JSONSerializable = require('./JSONSerializable');
 class User extends JSONSerializable {
     /**
      * The id of the user.
-     * @type {string|number}
+     * @type {string}
      */
     id = undefined;
 
@@ -29,7 +29,7 @@ class User extends JSONSerializable {
      * The time that the user was created.
      * @type {number}
      */
-    userTimeCreated = undefined;
+    userTimeCreated = Date.now();
 
     /**
      * User constructor.
@@ -38,12 +38,7 @@ class User extends JSONSerializable {
     constructor(data) {
         super();
 
-        // Iterate through the data and set the properties if they exist on the data object.
-        for (const key in data) {
-            if (data.hasOwnProperty(key)) {
-                this[key] = data[key];
-            }
-        }
+        Object.assign(this, data) // Assign the data object across the properties.
     }
 
     /**
@@ -62,12 +57,8 @@ class User extends JSONSerializable {
      * @param {string} username The username of the user.
      * @returns {User} The user object.
      */
-    static createUser(id,username) {
-        return new User({
-            id: id,
-            username: username,
-            userTimeCreated: Date.now()
-        });
+    static createUser(data) {
+        return new User(Object.assign(data, {}))
     }
 }
 
