@@ -22,7 +22,7 @@
   "homepage": "https://github.com/matthe815/not-riitag-server#readme",
   "dependencies": {
     "canvas": "^2.8.0",
-    "express": "^4.17.1",
+    "express": "^4.21.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
